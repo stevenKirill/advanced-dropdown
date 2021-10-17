@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import NavBar from './components/NavBar';
+import NavItem from './components/NavItem';
+import DropDown from './components/DropDown';
+import { faCoffee, faSdCard, faRadiation, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 function App() {
+  const size = 'lg';
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav>
+        <NavBar>
+          <NavItem icon={faCoffee} size={size}/>
+          <NavItem icon={faSdCard} size={size}/>
+          <NavItem icon={faRadiation} size={size}/>
+          <NavItem icon={faArrowDown} size={size}>
+            <DropDown/>
+          </NavItem>
+        </NavBar>
+      </nav>
     </div>
   );
 }
